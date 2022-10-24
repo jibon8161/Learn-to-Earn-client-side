@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
+import { createUserWithEmailAndPassword, getAuth, GithubAuthProvider, onAuthStateChanged, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import React, { createContext, useEffect, useState } from 'react';
 import app from '../../firebase/Firebase.config';
 
@@ -13,6 +13,8 @@ const auth = getAuth(app)
 const AuthContext = ({ children }) => {
     const [user, setUser] = useState('')
     const [loader, setLoader] = useState(true)
+
+    const gitProvider = new GithubAuthProvider()
 
     const createUser = (email, pass) => {
 
@@ -49,6 +51,15 @@ const AuthContext = ({ children }) => {
 
 
         return sendPasswordResetEmail(auth, email)
+
+
+    }
+
+    const githubSignIin = () => {
+
+        setLoader(true)
+        return signInWithPopup(auth, gitProvider)
+
 
 
     }
@@ -95,7 +106,7 @@ const AuthContext = ({ children }) => {
 
 
 
-    const contextData = { user, createUser, verification, updateProfileInfo, signInWithEmail, forgetPass, logOut, googleSignIn }
+    const contextData = { user, createUser, verification, updateProfileInfo, signInWithEmail, forgetPass, logOut, googleSignIn, githubSignIin }
 
     return (
         <div>

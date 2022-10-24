@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { InfoContext } from '../authContext/AuthContext';
 
 const Login = () => {
-    const { signInWithEmail, forgetPass, googleSignIn } = useContext(InfoContext)
+    const { signInWithEmail, forgetPass, googleSignIn, githubSignIin } = useContext(InfoContext)
     const [email, setEmail] = useState()
     const [error, setError] = useState('')
     const gProvider = new GoogleAuthProvider()
@@ -88,6 +88,35 @@ const Login = () => {
 
 
     }
+
+    const github = () => {
+
+
+        githubSignIin()
+
+            .then(result => {
+
+                const user = result.user;
+                console.log(user)
+
+
+            })
+            .catch(error => {
+
+
+                console.log(error)
+
+
+
+            })
+
+
+    }
+
+
+
+
+
     return (
         <div>
             <div>
@@ -125,7 +154,7 @@ const Login = () => {
                                     <button className="btn btn-circle btn-outline"><FaFacebook></FaFacebook></button>
                                 </div>
                                 <div>
-                                    <button className="btn btn-circle btn-outline"><FaGithub></FaGithub></button>
+                                    <button onClick={github} className="btn btn-circle btn-outline"><FaGithub></FaGithub></button>
                                 </div>
                             </div>
 
