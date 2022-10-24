@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, getAuth, sendEmailVerification } from 'firebase/auth';
+import { createUserWithEmailAndPassword, getAuth, sendEmailVerification, updateProfile } from 'firebase/auth';
 import React, { createContext } from 'react';
 import app from '../../firebase/Firebase.config';
 
@@ -27,11 +27,20 @@ const AuthContext = ({ children }) => {
     }
 
 
+    const updateProfileInfo = (name, url) => {
+     
+        return updateProfile(auth.currentUser, {
+            displayName: name, photoURL: url
+
+        })
+    }
 
 
 
 
-    const contextData = { user: 'jibon', createUser, verification }
+
+
+    const contextData = { user: 'jibon', createUser, verification, updateProfileInfo }
 
     return (
         <div>
