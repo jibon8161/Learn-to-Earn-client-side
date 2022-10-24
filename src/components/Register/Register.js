@@ -1,11 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { InfoContext } from '../authContext/AuthContext';
 
 
 const Register = () => {
-    const { createUser } = useContext(InfoContext)
+    const { createUser, verification } = useContext(InfoContext)
+    const [error, setError] = useState()
 
     const handleLogin = event => {
 
@@ -22,12 +23,16 @@ const Register = () => {
 
                 const user = result.user;
                 console.log(user)
-                toast.success('user created successfully')
+                verification()
+                    .then(toast.success('Verification email has been sent to your mail address'))
+
 
             })
             .catch(error => {
 
                 console.log(error.message)
+                setError(error.message)
+
 
             })
 
@@ -74,6 +79,7 @@ const Register = () => {
 
                                     </label>
                                 </div>
+                                <div className='text-red-600'><p><small>{error}</small></p></div>
                                 <div className="form-control mt-6">
                                     <button className="btn btn-primary">Register</button>
                                 </div>
