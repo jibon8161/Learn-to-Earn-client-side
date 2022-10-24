@@ -1,8 +1,39 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { FaGoogle, FaGithub, FaFacebook } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import { InfoContext } from '../authContext/AuthContext';
 
 const Login = () => {
+    const { signInWithEmail } = useContext(InfoContext)
+
+    const handleLogin = (event) => {
+
+        event.preventDefault()
+        const form = event.target
+        const email = form.email.value
+        const password = form.pass.value
+        console.log(email, password)
+        signInWithEmail(email, password)
+            .then(result => {
+
+                const user = result.user;
+                console.log(user)
+                toast.success('Login Success')
+             
+
+
+
+            })
+            .catch(error => {
+
+
+                console.log(error)
+                toast(error.message)
+
+            })
+
+    }
     return (
         <div>
             <div>
@@ -13,7 +44,7 @@ const Login = () => {
 
                         </div>
                         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                            <form className="card-body">
+                            <form onSubmit={handleLogin} className="card-body">
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Email</span>
