@@ -1,9 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { InfoContext } from "../authContext/AuthContext";
 
 export const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [theme, setTheme] = useState(false)
+
+    const { user } = useContext(InfoContext)
+
 
     return (
         <div className="bg-gray-900">
@@ -73,7 +77,7 @@ export const Header = () => {
 
                                 {
 
-                                   ! theme && <h1 className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Light Theme</h1>
+                                    !theme && <h1 className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Light Theme</h1>
 
                                 }
                             </button>
@@ -113,6 +117,9 @@ export const Header = () => {
                             >
                                 Sign up
                             </NavLink>
+                        </li>
+                        <li className="text-white">
+                        {user}
                         </li>
                     </ul>
 

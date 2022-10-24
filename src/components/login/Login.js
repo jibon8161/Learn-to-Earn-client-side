@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaGoogle, FaGithub, FaFacebook } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     return (
@@ -17,7 +18,7 @@ const Login = () => {
                                     <label className="label">
                                         <span className="label-text">Email</span>
                                     </label>
-                                    <input  type="text" placeholder="email" name='email' className="input input-bordered" />
+                                    <input type="text" placeholder="email" name='email' className="input input-bordered" />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
@@ -30,20 +31,22 @@ const Login = () => {
                                     <button className="btn btn-primary">Login</button>
                                 </div>
                             </form>
-                            <div className="form-control mt-6 grid grid-cols-3 gap-0">
+                            <div className="form-control mt-6 grid grid-cols-3 gap-0 mb-5">
                                 <div>
-                                    <button  className="btn btn-circle btn-outline"><FaGoogle></FaGoogle></button>
+                                    <button className="btn btn-circle btn-outline"><FaGoogle></FaGoogle></button>
                                 </div>
                                 <div>
-                                    <button  className="btn btn-circle btn-outline"><FaFacebook></FaFacebook></button>
+                                    <button className="btn btn-circle btn-outline"><FaFacebook></FaFacebook></button>
                                 </div>
                                 <div>
-                                    <button  className="btn btn-circle btn-outline"><FaGithub></FaGithub></button>
+                                    <button className="btn btn-circle btn-outline"><FaGithub></FaGithub></button>
                                 </div>
                             </div>
-                            <label className="label">
-                                <button ><small>Forget passWord? </small></button>
-                            </label>
+
+                            <p><small>Are you new here? <Link to='/register'><button className="btn btn-link btn-xs"><small>Register</small></button></Link> </small></p>
+
+                            <p> <button className="btn btn-link btn-xs"><small>Forget password? Don't Worry Click Here </small></button></p>
+
 
                         </div>
                     </div>
