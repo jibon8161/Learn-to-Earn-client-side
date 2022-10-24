@@ -1,5 +1,5 @@
-import { createUserWithEmailAndPassword, getAuth, sendEmailVerification, signInWithEmailAndPassword, updateProfile } from 'firebase/auth';
-import React, { createContext } from 'react';
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
+import React, { createContext, useEffect, useState } from 'react';
 import app from '../../firebase/Firebase.config';
 
 
@@ -11,6 +11,8 @@ export { getAuth } from 'firebase/auth'
 const auth = getAuth(app)
 
 const AuthContext = ({ children }) => {
+    const [user, setUser] = useState('')
+    const [loader, setLoader] = useState(true)
 
     const createUser = (email, pass) => {
 
@@ -43,12 +45,57 @@ const AuthContext = ({ children }) => {
 
     }
 
+    const forgetPass = email => {
+
+
+        return sendPasswordResetEmail(auth, email)
+
+
+    }
+
+
+
+    useEffect(() => {
+
+        const unSubscribe = onAuthStateChanged(auth, currentUser => {
+
+            setUser(currentUser)
+
+
+
+
+        })
+
+        return () => unSubscribe()
+
+
+    }, [])
+
+    const logOut = () => {
+
+        setLoader(true)
+
+        return signOut(auth)
+
+
+    }
+
+
+
+    const googleSignIn = provider => {
+
+
+        return signInWithPopup(auth, provider)
+
+
+    }
 
 
 
 
 
-    const contextData = { user: 'jibon', createUser, verification, updateProfileInfo, signInWithEmail }
+
+    const contextData = { user, createUser, verification, updateProfileInfo, signInWithEmail, forgetPass, logOut, googleSignIn }
 
     return (
         <div>

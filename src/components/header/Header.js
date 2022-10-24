@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import toast from "react-hot-toast";
 import { NavLink } from "react-router-dom";
 import { InfoContext } from "../authContext/AuthContext";
 
@@ -6,7 +7,17 @@ export const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [theme, setTheme] = useState(false)
 
-    const { user } = useContext(InfoContext)
+    const { user, logOut } = useContext(InfoContext)
+
+    const SignOut = () => {
+
+
+        logOut()
+            .then(toast.success('Log Out'))
+
+
+    }
+
 
 
     return (
@@ -98,29 +109,45 @@ export const Header = () => {
                         </ul>
                     </div>
                     <ul className=" items-center hidden space-x-8 lg:flex">
-                        <li>
-                            <NavLink
-                                to="/login"
-                                aria-label="Sign in"
-                                title="Sign in"
-                                className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
-                            >
-                                Sign in
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink
-                                to="/register"
-                                className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                                aria-label="Sign up"
-                                title="Sign up"
-                            >
-                                Sign up
-                            </NavLink>
-                        </li>
-                        <li className="text-white">
-                        {user}
-                        </li>
+                        {user && user?.uid ? <button onClick={SignOut} className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none">LogOut</button>
+                            :
+
+                            <>
+
+                                <li>
+                                    <NavLink
+                                        to="/login"
+                                        aria-label="Sign in"
+                                        title="Sign in"
+                                        className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                                    >
+                                        Sign in
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink
+                                        to="/register"
+                                        className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                                        aria-label="Sign up"
+                                        title="Sign up"
+                                    >
+                                        Sign up
+                                    </NavLink>
+                                </li>
+                            </>
+
+
+                        }
+                        {
+
+                            user && <div className="grid grid-cols-2 text-slate-50 gap-5">
+
+                                <img className="btn-circle" src={user?.photoURL} alt="" title={user?.displayName} />
+                            </div>
+                              
+
+
+                        }
                     </ul>
 
 

@@ -6,7 +6,7 @@ import { InfoContext } from '../authContext/AuthContext';
 
 const Register = () => {
     const { createUser, verification, updateProfileInfo } = useContext(InfoContext)
-    const [error, setError] = useState()
+    const [error, setError] = useState('')
 
     const handleLogin = event => {
 
@@ -23,6 +23,8 @@ const Register = () => {
 
                 const user = result.user;
                 console.log(user)
+                form.reset()
+                setError('')
                 verification()
                     .then(toast.success('Verification email has been sent to your mail address'))
 
