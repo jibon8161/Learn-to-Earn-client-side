@@ -146,15 +146,15 @@ const Login = () => {
                                     <button className="btn btn-primary">Login</button>
                                 </div>
                             </form>
-                            <div className="form-control mt-6 grid grid-cols-3 gap-0 mb-5">
+                            <h1 className='text-purple-800 font-bold'>More login options</h1>
+                            <div className="form-control mt-6 grid grid-cols-2 gap-0 mb-5 ">
+                               
                                 <div>
-                                    <button onClick={google} className="btn btn-circle btn-outline"><FaGoogle></FaGoogle></button>
+                                    <button onClick={google} className="btn btn-circle btn-outline ml-28"><FaGoogle></FaGoogle></button>
                                 </div>
+                              
                                 <div>
-                                    <button className="btn btn-circle btn-outline"><FaFacebook></FaFacebook></button>
-                                </div>
-                                <div>
-                                    <button onClick={github} className="btn btn-circle btn-outline"><FaGithub></FaGithub></button>
+                                    <button onClick={github} className="btn btn-circle btn-outline mr-28"><FaGithub></FaGithub></button>
                                 </div>
                             </div>
 
