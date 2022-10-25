@@ -1,5 +1,6 @@
 import React from 'react';
-
+import Lottie from 'lottie-react';
+import hm from './hm.json'
 const Home = () => {
     return (
         <div>
@@ -8,12 +9,15 @@ const Home = () => {
                 <p className='text-2xl'>A trusted educational platform for students</p>
                 <p className='text-1xl'>We innovate learning processes</p>
             </div>
-<div>
+            <div>
+                <Lottie className='lg:w-[40%] mx-auto mt-5' animationData={hm}></Lottie>
+            </div>
+            <div>
 
 
 
-    
-</div>
+
+            </div>
 
         </div>
     );
