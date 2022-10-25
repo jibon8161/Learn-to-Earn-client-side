@@ -4,12 +4,15 @@ import Footer from '../footer/Footer';
 import { Header } from '../header/Header';
 
 const Main = () => {
+
     return (
+
         <div>
             <Header></Header>
             <Outlet></Outlet>
             <Footer></Footer>
         </div>
+
     );
 };
 

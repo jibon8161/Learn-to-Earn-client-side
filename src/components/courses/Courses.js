@@ -35,9 +35,9 @@ const Courses = () => {
 
                         </div>
                     </div>
-                    <div className='shadow-inner shadow-zinc-700 '>
+                    <div className='shadow-inner shadow-zinc-700'>
                         {
-                            data.map(sidebar => <Sidebar key={sidebar.key} sidebar={sidebar}></Sidebar>)
+                            data.map(sidebarData => <Sidebar key={sidebarData.id} sidebarData={sidebarData}></Sidebar>)
 
 
                         }
