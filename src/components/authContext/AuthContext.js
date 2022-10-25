@@ -18,21 +18,21 @@ const AuthContext = ({ children }) => {
 
     const createUser = (email, pass) => {
 
-
+        setLoader(true)
         return createUserWithEmailAndPassword(auth, email, pass)
 
 
     }
     const verification = () => {
 
-
+        setLoader(true)
         return sendEmailVerification(auth.currentUser)
 
     }
 
 
     const updateProfileInfo = (name, url) => {
-
+        setLoader(true)
         return updateProfile(auth.currentUser, {
             displayName: name, photoURL: url
 
@@ -41,7 +41,7 @@ const AuthContext = ({ children }) => {
 
 
     const signInWithEmail = (email, pass) => {
-
+        setLoader(true)
         return signInWithEmailAndPassword(auth, email, pass)
 
 
@@ -49,7 +49,7 @@ const AuthContext = ({ children }) => {
 
     const forgetPass = email => {
 
-
+        setLoader(true)
         return sendPasswordResetEmail(auth, email)
 
 
@@ -71,7 +71,7 @@ const AuthContext = ({ children }) => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
 
             setUser(currentUser)
-
+            setLoader(false)
 
 
 
@@ -95,7 +95,7 @@ const AuthContext = ({ children }) => {
 
     const googleSignIn = provider => {
 
-
+        setLoader(true)
         return signInWithPopup(auth, provider)
 
 

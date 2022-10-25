@@ -1,8 +1,8 @@
 import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
-import { FaGoogle, FaGithub} from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { FaGoogle, FaGithub } from "react-icons/fa";
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { InfoContext } from '../authContext/AuthContext';
 import Lottie from 'lottie-react';
 import anim from './animlogin.json'
@@ -12,6 +12,12 @@ const Login = () => {
     const [email, setEmail] = useState()
     const [error, setError] = useState('')
     const gProvider = new GoogleAuthProvider()
+
+    const navigate = useNavigate()
+    const location = useLocation()
+
+
+    const from = location?.state?.from?.pathname || '/'
 
     const handleLogin = (event) => {
 
@@ -28,6 +34,7 @@ const Login = () => {
                 form.reset()
                 setError('')
                 toast.success('You are successfully logged in')
+                navigate(from, { state: true })
 
 
 
@@ -60,6 +67,7 @@ const Login = () => {
             .then(toast.success('reset mail has been sent to your mail address'))
 
 
+
     }
 
 
@@ -72,6 +80,7 @@ const Login = () => {
                 const user = result.user;
                 console.log(user)
                 toast.success('You are successfully logged in')
+                navigate(from, { state: true })
 
 
 
@@ -100,6 +109,7 @@ const Login = () => {
 
                 const user = result.user;
                 console.log(user)
+                navigate(from, { state: true })
 
 
             })
@@ -125,7 +135,7 @@ const Login = () => {
                 <div className="hero min-h-screen bg-base-200 shadow-2xl  shadow-zinc-600">
                     <div className="hero-content flex-col lg:flex-row-reverse">
                         <div className="text-center lg:text-left">
-                        <Lottie className='w-[70%] lg:ml-52' animationData={anim}></Lottie>
+                            <Lottie className='w-[70%] lg:ml-52' animationData={anim}></Lottie>
 
                         </div>
                         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">

@@ -6,6 +6,7 @@ import Login from "../../login/Login";
 import Main from "../../main/Main";
 import Premium from "../../PremiumAccess/Premium";
 import Register from "../../Register/Register";
+import PrivateRoute from "../privateRouter/PrivateRoute";
 
 export const router = createBrowserRouter([
 
@@ -51,7 +52,7 @@ export const router = createBrowserRouter([
             {
 
                 path: '/premium/:id',
-                element: <Premium></Premium>,
+                element: <PrivateRoute><Premium></Premium></PrivateRoute>,
                 loader: ({ params }) => fetch(`https://learn-to-earn-server.vercel.app/course/${params.id}`)
             },
 
