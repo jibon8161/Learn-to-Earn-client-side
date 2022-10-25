@@ -106,7 +106,7 @@ const AuthContext = ({ children }) => {
 
 
 
-    const contextData = { user, createUser, verification, updateProfileInfo, signInWithEmail, forgetPass, logOut, googleSignIn, githubSignIin }
+    const contextData = { user, createUser, verification, updateProfileInfo, signInWithEmail, forgetPass, logOut, googleSignIn, githubSignIin, loader }
 
     return (
         <div>

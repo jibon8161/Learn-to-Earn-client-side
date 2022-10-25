@@ -8,7 +8,7 @@ const PrivateRoute = ({ children }) => {
     const { user, loader } = useContext(InfoContext)
     if (loader) {
 
-        return <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-red-600"></div>
+        return <div className="w-32 h-32 border-4 border-dashed rounded-full animate-spin mx-auto mt-32 mb-32 border-red-600"></div>
 
 
     }
