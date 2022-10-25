@@ -1,6 +1,8 @@
 import React from 'react';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import { FaDownload } from "react-icons/fa";
+import Pdf from "react-to-pdf";
+const ref = React.createRef();
 
 
 const CourseDetails = () => {
@@ -24,23 +26,26 @@ const CourseDetails = () => {
 
     return (
         <div>
+
             <div className="navbar bg-gray-100  mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:mb-12 shadow-2xl  shadow-zinc-600">
                 <div className="lg:flex-1 text-2xl font-bold ">
                     <p className='hidden lg:block'>You have Selected </p><span className='text-purple-700 font-bold mr-3 ml-3'>{data?.name}</span><img className='w-10 ' src={data?.urlimg} alt="" />
                 </div>
+
                 <div className="flex-none ml-8">
                     <div >
-                        <button type="button" className="relative px-8 py-4 ml-4 overflow-hidden font-bold text-3xl rounded dark:bg-gray-100 dark:text-gray-900"><FaDownload className='text-red-600'></FaDownload>
-                            <span className="absolute top-0 right-0 px-5 py-1 text-xs tracking-wider text-center uppercase whitespace-no-wrap origin-bottom-left transform rotate-45 -translate-y-full translate-x-1/3 dark:bg-violet-400 text-purple-700">PDF</span>
-                        </button>
+
+                        <Pdf targetRef={ref} filename="Course-Details.pdf">
+                            {({ toPdf }) => <button className="relative px-8 py-4 ml-4 overflow-hidden font-bold text-3xl rounded dark:bg-gray-100 dark:text-gray-900" onClick={toPdf}><FaDownload className='text-red-600'></FaDownload>  <span className="absolute top-0 right-0 px-5 py-1 text-xs tracking-wider text-center uppercase whitespace-no-wrap origin-bottom-left transform rotate-45 -translate-y-full translate-x-1/3 dark:bg-violet-400 text-purple-700">PDF</span></button>}
+                        </Pdf>
                     </div>
 
                 </div>
             </div>
 
-            <div>
-                <div className="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
-                    <div class="w-full bg-gray-300 bg-center bg-cover rounded-lg shadow-md" >
+            <div ref={ref}  >
+                <div  className="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
+                    <div  class="w-full bg-gray-300 bg-center bg-cover rounded-lg shadow-md" >
 
                         <img className='w-full' src={data?.urlimg} alt="" />
 
@@ -55,7 +60,7 @@ const CourseDetails = () => {
                         </div>
 
                     </div>
-                </div>
+                </div >
                 <p className='mt-4 mb-5 font-semibold'>{data.details}</p>
             </div>
 
