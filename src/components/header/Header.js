@@ -140,11 +140,14 @@ export const Header = () => {
                         }
                         {
 
-                            user && <div className="grid grid-cols-2 text-slate-50 gap-5">
+                            user?.photoURL && <div className="grid grid-cols-2 text-slate-50 gap-5">
 
                                 <img className="btn-circle" src={user?.photoURL} alt="" title={user?.displayName} />
                             </div>
-                              
+
+
+
+
 
 
                         }

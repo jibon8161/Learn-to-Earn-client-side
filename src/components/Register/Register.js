@@ -2,6 +2,8 @@ import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { InfoContext } from '../authContext/AuthContext';
+import Lottie from 'lottie-react';
+import anim from './signup.json'
 
 
 const Register = () => {
@@ -54,10 +56,10 @@ const Register = () => {
     return (
         <div>
             <div>
-                <div className="hero min-h-screen bg-base-200 shadow-2xl">
+                <div className="hero min-h-screen bg-base-200 shadow-2xl  shadow-zinc-600">
                     <div className="hero-content flex-col lg:flex-row-reverse">
                         <div className="text-center lg:text-left">
-                            <h1 className="text-5xl font-bold">Register!</h1>
+                            <Lottie className='w-96 ml-52' animationData={anim}></Lottie>
 
                         </div>
                         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
@@ -66,25 +68,25 @@ const Register = () => {
                                     <label className="label">
                                         <span className="label-text">Name</span>
                                     </label>
-                                    <input type="text" placeholder="Name" name='name' className="input input-bordered" />
+                                    <input type="text" placeholder="Name" name='name' className="input input-bordered shadow-inner  shadow-zinc-600 hover:bg-orange-200" required />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">photo URL</span>
                                     </label>
-                                    <input type="text" placeholder="photo URL" name='url' className="input input-bordered" />
+                                    <input type="text" placeholder="photo URL" name='url' className="input input-bordered shadow-inner  shadow-zinc-600 hover:bg-orange-200" required />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Email</span>
                                     </label>
-                                    <input type="text" placeholder="email" name='email' className="input input-bordered" required />
+                                    <input type="text" placeholder="email" name='email' className="input input-bordered shadow-inner  shadow-zinc-600 hover:bg-orange-200" required />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Password</span>
                                     </label>
-                                    <input type="password" placeholder="password" name='pass' className="input input-bordered" required />
+                                    <input type="password" placeholder="password" name='pass' className="input input-bordered shadow-inner  shadow-zinc-600 hover:bg-orange-200" required />
                                     <label className="label">
 
                                     </label>
