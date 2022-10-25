@@ -1,21 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Allcourses from '../AllCourses/Allcourses';
+import { InfoContext } from '../authContext/AuthContext';
 import Sidebar from '../sidebar/Sidebar';
 import './Course.css'
 
 const Courses = () => {
     const data = useLoaderData([])
- 
+
+    const { user } = useContext(InfoContext)
+
     return (
         <div>
-            <h1 className='text-5xl font-extrabold text-purple-700 mb-2 mt-5'>We are offering you....</h1>
+            <h1 className='text-4xl font-extrabold text-purple-700 mb-2 mt-5'>{user?.displayName} We are offering you....</h1>
 
 
             <div className='lg:grid grid-cols-[9fr,3fr] '>
 
 
-                <div className=''>
+                <div className='lg:grid grid-cols-3'>
 
                     {
 
@@ -24,19 +27,21 @@ const Courses = () => {
                     }
 
                 </div>
-                <div className='border border-orange-500 '>
-                    <div className="flex items-center p-2 space-x-4">
-                        <img src="https://source.unsplash.com/100x100/?portrait" alt="" className="w-12 h-12 rounded-full dark:bg-gray-500" />
+                <div className='shadow-inner shadow-zinc-700'>
+                    <div className="flex items-center p-2 space-x-4 bg-black text-slate-100">
+
                         <div>
-                            <h2 className="text-lg font-semibold">Leroy Jenkins</h2>
+                            <h2 className="text-lg font-semibold"> Click below for more details...</h2>
 
                         </div>
                     </div>
-                    {
-                        data.map(sidebar => <Sidebar key={sidebar.key} sidebar={sidebar}></Sidebar>)
+                    <div className='shadow-inner shadow-zinc-700 '>
+                        {
+                            data.map(sidebar => <Sidebar key={sidebar.key} sidebar={sidebar}></Sidebar>)
 
 
-                    }
+                        }
+                    </div>
                 </div>
 
 
