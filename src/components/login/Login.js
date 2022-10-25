@@ -107,6 +107,7 @@ const Login = () => {
 
                 const user = result.user;
                 console.log(user)
+                toast.success('You are successfully logged in')
                 navigate(from, { state: true })
 
 
@@ -160,11 +161,11 @@ const Login = () => {
                             <div className="form-control mt-6 grid grid-cols-2 gap-0 mb-5 ">
 
                                 <div>
-                                    <button onClick={google} className="btn btn-circle btn-outline  ml-28"><FaGoogle></FaGoogle></button>
+                                    <button onClick={google} className="btn btn-circle btn-outline  lg:ml-28"><FaGoogle></FaGoogle></button>
                                 </div>
 
                                 <div>
-                                    <button onClick={github} className="btn btn-circle btn-outline mr-28"><FaGithub></FaGithub></button>
+                                    <button onClick={github} className="btn btn-circle btn-outline lg:mr-28"><FaGithub></FaGithub></button>
                                 </div>
                             </div>
 

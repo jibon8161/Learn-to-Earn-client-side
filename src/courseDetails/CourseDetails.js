@@ -42,7 +42,7 @@ const CourseDetails = () => {
                 <div className="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
                     <div class="w-full bg-gray-300 bg-center bg-cover rounded-lg shadow-md" >
 
-                        <img src={data?.urlimg} alt="" />
+                        <img className='w-full' src={data?.urlimg} alt="" />
 
                     </div>
 

@@ -21,8 +21,8 @@ export const Header = () => {
 
 
     return (
-        <div className="bg-gray-900">
-            <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+        <div className="bg-gray-900 ">
+            <div className="px-4  py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
                 <div className="relative flex items-center justify-between">
                     <div className="flex items-center">
                         <NavLink
@@ -164,7 +164,7 @@ export const Header = () => {
                         <button
                             aria-label="Open Menu"
                             title="Open Menu"
-                            className="p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline mt-64"
+                            className="p-2 -mr-2 transition duration-200 rounded focus:outline-none focus:shadow-outline mt-64"
                             onClick={() => setIsMenuOpen(true)}
                         >
                             <svg className="w-5 text-gray-600" viewBox="0 0 24 24">
@@ -209,7 +209,7 @@ export const Header = () => {
                                                     <rect x="14" y="11" width="7" height="12" />
                                                 </svg>
                                                 <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                                                    Test-your-knowledge
+                                                    Learn-TO-EARN
                                                 </span>
                                             </NavLink>
                                         </div>
@@ -217,7 +217,7 @@ export const Header = () => {
                                             <button
                                                 aria-label="Close Menu"
                                                 title="Close Menu"
-                                                className="p-2 -mt-2 -mr-2 transition duration-200 rounded hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                                                className="p-2 -mt-2 -mr-2  transition duration-200 rounded hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
                                                 onClick={() => setIsMenuOpen(false)}
                                             >
                                                 <svg className="w-5 text-gray-600" viewBox="0 0 24 24">
@@ -243,22 +243,12 @@ export const Header = () => {
                                             </li>
                                             <li>
                                                 <NavLink
-                                                    to="/topics"
+                                                    to="/courses"
                                                     aria-label="Our product"
                                                     title="Our product"
                                                     className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                                                 >
-                                                    Topics
-                                                </NavLink>
-                                            </li>
-                                            <li>
-                                                <NavLink
-                                                    to="/statics"
-                                                    aria-label="Product pricing"
-                                                    title="Product pricing"
-                                                    className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                                                >
-                                                    Statistics
+                                                    Our Courses
                                                 </NavLink>
                                             </li>
                                             <li>
@@ -273,26 +263,49 @@ export const Header = () => {
                                             </li>
 
 
-                                            <li>
-                                                <NavLink
-                                                    to="/"
-                                                    aria-label="Sign in"
-                                                    title="Sign in"
-                                                    className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                                                >
-                                                    Sign in
-                                                </NavLink>
-                                            </li>
-                                            <li>
-                                                <NavLink
-                                                    to="/"
-                                                    className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                                                    aria-label="Sign up"
-                                                    title="Sign up"
-                                                >
-                                                    Sign up
-                                                </NavLink>
-                                            </li>
+
+                                            {user && user?.uid ? <button onClick={SignOut} className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-black transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none">LogOut</button>
+                                                :
+
+                                                <>
+
+                                                    <li>
+                                                        <NavLink
+                                                            to="/login"
+                                                            aria-label="Sign in"
+                                                            title="Sign in"
+                                                            className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
+                                                        >
+                                                            Sign in
+                                                        </NavLink>
+                                                    </li>
+                                                    <li>
+                                                        <NavLink
+                                                            to="/register"
+                                                            className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-black transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                                                            aria-label="Sign up"
+                                                            title="Sign up"
+                                                        >
+                                                            Sign up
+                                                        </NavLink>
+                                                    </li>
+                                                </>
+
+
+                                            }
+                                            {
+
+                                                user?.photoURL && <div className="lg:grid grid-cols-2 text-slate-50 gap-5">
+
+                                                    <img className="btn-circle ml-24 lg:ml-0" src={user?.photoURL} alt="" title={user?.displayName} />
+                                                </div>
+
+
+
+
+
+
+                                            }
                                         </ul>
                                     </nav>
                                 </div>
