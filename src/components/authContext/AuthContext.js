@@ -16,6 +16,8 @@ const AuthContext = ({ children }) => {
 
     const gitProvider = new GithubAuthProvider()
 
+    //create user with email and pass
+
     const createUser = (email, pass) => {
 
         setLoader(true)
@@ -23,6 +25,9 @@ const AuthContext = ({ children }) => {
 
 
     }
+
+    //email verification
+
     const verification = () => {
 
         setLoader(true)
@@ -30,7 +35,7 @@ const AuthContext = ({ children }) => {
 
     }
 
-
+    //update profile info
     const updateProfileInfo = (name, url) => {
         setLoader(true)
         return updateProfile(auth.currentUser, {
@@ -39,13 +44,15 @@ const AuthContext = ({ children }) => {
         })
     }
 
-
+    //signin With Email
     const signInWithEmail = (email, pass) => {
         setLoader(true)
         return signInWithEmailAndPassword(auth, email, pass)
 
 
     }
+
+    //forgetpass
 
     const forgetPass = email => {
 
@@ -54,6 +61,8 @@ const AuthContext = ({ children }) => {
 
 
     }
+
+    //Github signin
 
     const githubSignIin = () => {
 
@@ -64,7 +73,7 @@ const AuthContext = ({ children }) => {
 
     }
 
-
+    //AuthChange
 
     useEffect(() => {
 
@@ -82,6 +91,8 @@ const AuthContext = ({ children }) => {
 
     }, [])
 
+    //logout
+
     const logOut = () => {
 
         setLoader(true)
@@ -91,7 +102,7 @@ const AuthContext = ({ children }) => {
 
     }
 
-
+    //google signin
 
     const googleSignIn = provider => {
 
@@ -104,7 +115,7 @@ const AuthContext = ({ children }) => {
 
 
 
-
+    //context data
 
     const contextData = { user, createUser, verification, updateProfileInfo, signInWithEmail, forgetPass, logOut, googleSignIn, githubSignIin, loader }
 

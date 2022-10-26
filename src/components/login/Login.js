@@ -24,6 +24,9 @@ const Login = () => {
         const email = form.email.value
         const password = form.pass.value
         console.log(email, password)
+
+        //sign in with email and pass
+
         signInWithEmail(email, password)
             .then(result => {
 
@@ -48,6 +51,8 @@ const Login = () => {
 
     }
 
+    //sent email for forget password
+
     const forget = (event) => {
 
         const email = event.target.value
@@ -68,6 +73,8 @@ const Login = () => {
 
     }
 
+
+    //google popup signin
 
     const google = () => {
 
@@ -97,6 +104,8 @@ const Login = () => {
 
 
     }
+
+    //github popup signin
 
     const github = () => {
 

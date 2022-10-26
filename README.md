@@ -9,18 +9,18 @@ Learn-to-Earn is mobile-ready,user Friendly and also very secure.
 - Firebase is the authentication system for this website.
 - this site have a server site also....
 - Set your Web App to Dark/Light Mode based on User preference.
-- This wonderful project made with 
- >(1)=>React.
- >(2)=>React-router-dom.
->(3)=>Firebase.
- >(4)=>Tailwind .
->(5)=>DaisyUi.
- >(6)=>React-Hot-Toast.
- >(7)=>Lottieflies .
- >(8)=>React-To-Pdf.
->(9)=>varcel.
->(10)=>React-icons
 
+## This wonderful project made with 
+ 1.React.
+2.React-router-dom.
+3.Firebase.
+4.Tailwind .
+5.DaisyUi.
+6.React-Hot-Toast.
+7.Lottieflies .
+8.React-To-Pdf.
+9.varcel.
+10.React-icons
 
 
 ## Features

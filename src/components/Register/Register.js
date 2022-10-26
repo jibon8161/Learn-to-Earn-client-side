@@ -10,6 +10,8 @@ const Register = () => {
     const { createUser, verification, updateProfileInfo } = useContext(InfoContext)
     const [error, setError] = useState('')
 
+
+
     const handleLogin = event => {
 
         event.preventDefault()
@@ -20,7 +22,7 @@ const Register = () => {
         const email = form.email.value
         const password = form.pass.value
         console.log(name, email, password, url)
-        
+
         if (!/(?=.*?[#?!@$%^&*-])/.test(password)) {
 
             toast.error(' Password must have one special character')
@@ -29,6 +31,8 @@ const Register = () => {
             return;
 
         }
+
+        //signup with email and pass
 
         createUser(email, password)
             .then(result => {
@@ -39,6 +43,8 @@ const Register = () => {
                 setError('')
                 verification()
                     .then(toast.success('Verification email has been sent to your mail address'))
+
+                //update profile info
 
                 updateProfileInfo(name, url)
                     .then(() => { })
