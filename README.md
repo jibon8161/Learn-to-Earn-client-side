@@ -1,6 +1,7 @@
 # Learn-to-Earn
 ## _Be ready. Be smart. Be noticed!._
-<!--[Live Link]()-->
+
+[Live Link](https://learn-to-earn-e06dc.web.app/home)
 
 Learn-to-Earn is mobile-ready,user Friendly and also very secure. 
 
@@ -11,16 +12,16 @@ Learn-to-Earn is mobile-ready,user Friendly and also very secure.
 - Set your Web App to Dark/Light Mode based on User preference.
 
 ## This wonderful project made with 
- - 1.React. <br />
-- 2.React-router-dom.<br />
-- 3.Firebase.<br />
-- 4.Tailwind .<br />
-- 5.DaisyUi.<br />
-- 6.React-Hot-Toast.<br />
-- 7.Lottieflies .<br />
-- 8.React-To-Pdf.<br />
-- 9.varcel.<br />
-- 10.React-icons
+ - React. <br />
+- React-router-dom.<br />
+- Firebase.<br />
+- Tailwind .<br />
+- DaisyUi.<br />
+- React-Hot-Toast.<br />
+- Lottieflies .<br />
+- React-To-Pdf.<br />
+- varcel.<br />
+- React-icons
 
 
 ## Features

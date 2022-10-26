@@ -82,7 +82,7 @@ export const Header = () => {
 
                             <button
                                 aria-label="Open Menu"
-                                title="Open Menu"
+                                title="Change theme"
                                 className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
                                 onClick={() => setTheme(true)}
                             >
@@ -95,7 +95,7 @@ export const Header = () => {
                             </button>
                             <button
                                 aria-label="Open Menu"
-                                title="Open Menu"
+                                title="Change theme"
                                 className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
                                 onClick={() => setTheme(false)}
                             >
@@ -275,7 +275,7 @@ export const Header = () => {
 
                                             <button
                                                 aria-label="Open Menu"
-                                                title="Open Menu"
+                                                title="Change mode"
                                                 className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
                                                 onClick={() => setTheme(true)}
                                             >
@@ -288,7 +288,7 @@ export const Header = () => {
                                             </button>
                                             <button
                                                 aria-label="Open Menu"
-                                                title="Open Menu"
+                                                title="Change theme"
                                                 className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
                                                 onClick={() => setTheme(false)}
                                             >
