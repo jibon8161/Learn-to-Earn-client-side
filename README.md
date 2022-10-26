@@ -1,4 +1,4 @@
-#This Project is called  Learn-to-Earn
+# This Project is called  Learn-to-Earn
 ## _Be ready. Be smart. Be noticed!._
 <!--[Live Link]()-->
 
@@ -11,15 +11,15 @@ Learn-to-Earn is mobile-ready,user Friendly and also very secure.
 - Set your Web App to Dark/Light Mode based on User preference.
 
 ## This wonderful project made with 
- 1.React.
-2.React-router-dom.
-3.Firebase.
-4.Tailwind .
-5.DaisyUi.
-6.React-Hot-Toast.
-7.Lottieflies .
-8.React-To-Pdf.
-9.varcel.
+ 1.React. <br />
+2.React-router-dom.<br />
+3.Firebase.<br />
+4.Tailwind .<br />
+5.DaisyUi.<br />
+6.React-Hot-Toast.<br />
+7.Lottieflies .<br />
+8.React-To-Pdf.<br />
+9.varcel.<br />
 10.React-icons
 
 
