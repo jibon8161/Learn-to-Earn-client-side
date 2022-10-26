@@ -1,4 +1,4 @@
-# This Project is called  Learn-to-Earn
+# Learn-to-Earn
 ## _Be ready. Be smart. Be noticed!._
 <!--[Live Link]()-->
 
