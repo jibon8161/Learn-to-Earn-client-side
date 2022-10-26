@@ -20,6 +20,16 @@ const Register = () => {
         const email = form.email.value
         const password = form.pass.value
         console.log(name, email, password, url)
+        
+        if (!/(?=.*?[#?!@$%^&*-])/.test(password)) {
+
+            toast.error(' Password must have one special character')
+            setError('Password must have one special character')
+
+            return;
+
+        }
+
         createUser(email, password)
             .then(result => {
 
@@ -59,7 +69,7 @@ const Register = () => {
                 <div className="hero min-h-screen bg-base-200 shadow-2xl  shadow-zinc-600">
                     <div className="hero-content flex-col lg:flex-row-reverse">
                         <div className="text-center lg:text-left">
-                            <Lottie className='w-96 ml-52' animationData={anim}></Lottie>
+                            <Lottie className='lg:w-96 lg:ml-52 w-40' animationData={anim}></Lottie>
 
                         </div>
                         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
