@@ -75,7 +75,7 @@ const Register = () => {
                 <div className="hero min-h-screen bg-base-200 shadow-2xl  shadow-zinc-600">
                     <div className="hero-content flex-col lg:flex-row-reverse">
                         <div className="text-center lg:text-left">
-                            <Lottie className='lg:w-96 lg:ml-52 w-40' animationData={anim}></Lottie>
+                            <Lottie className='lg:w-96 lg:ml-52 w-40 mt-16 lg:mt-0' animationData={anim}></Lottie>
 
                         </div>
                         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
@@ -84,7 +84,7 @@ const Register = () => {
                                     <label className="label">
                                         <span className="label-text">Name</span>
                                     </label>
-                                    <input type="text" placeholder="Name" name='name' className="input input-bordered shadow-inner  shadow-zinc-600 hover:bg-orange-200" required />
+                                    <input type="text" placeholder="Full Name" name='name' className="input input-bordered shadow-inner  shadow-zinc-600 hover:bg-orange-200" required />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">

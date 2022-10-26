@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import toast from "react-hot-toast";
 import { NavLink } from "react-router-dom";
 import { InfoContext } from "../authContext/AuthContext";
+import { FaRegLightbulb } from "react-icons/fa";
 
 export const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -88,7 +89,7 @@ export const Header = () => {
 
                                 {
 
-                                    !theme && <h1 className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Light Theme</h1>
+                                    !theme && <h1 className="font-medium tracking-wide text-red-600 transition-colors duration-200 hover:text-teal-accent-400 btn btn-outline btn-warning  btn-sm"><small>Light mode</small></h1>
 
                                 }
                             </button>
@@ -100,7 +101,7 @@ export const Header = () => {
                             >
 
                                 {
-                                    theme && <h1 className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Dark Theme</h1>
+                                    theme && <h1 className="font-medium tracking-wide  text-yellow-600  transition-colors duration-200 hover:text-teal-accent-400 btn btn-outline btn-secondary  btn-sm "><small>Dark mode</small></h1>
 
                                 }
 
@@ -272,9 +273,36 @@ export const Header = () => {
                                                 </NavLink>
                                             </li>
 
+                                            <button
+                                                aria-label="Open Menu"
+                                                title="Open Menu"
+                                                className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                                                onClick={() => setTheme(true)}
+                                            >
+
+                                                {
+
+                                                    !theme && <h1 className="font-medium tracking-wide text-red-600 transition-colors duration-200 hover:text-teal-accent-400 btn btn-outline btn-warning  btn-sm"><small>Light mode</small></h1>
+
+                                                }
+                                            </button>
+                                            <button
+                                                aria-label="Open Menu"
+                                                title="Open Menu"
+                                                className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
+                                                onClick={() => setTheme(false)}
+                                            >
+
+                                                {
+                                                    theme && <h1 className="font-medium tracking-wide text-yellow-600  transition-colors duration-200 hover:text-teal-accent-400 btn btn-outline btn-secondary  btn-sm "><small>Dark mode</small></h1>
+
+                                                }
+
+                                            </button>
 
 
-                                            {user && user?.uid ? <button onClick={SignOut} className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-black transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none">LogOut</button>
+
+                                            {user && user?.uid ? <button onClick={SignOut} className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400 block ml-36 ">LogOut</button>
                                                 :
 
                                                 <>
@@ -292,7 +320,7 @@ export const Header = () => {
                                                     <li>
                                                         <NavLink
                                                             to="/register"
-                                                            className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-black transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                                                            className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
                                                             aria-label="Sign up"
                                                             title="Sign up"
                                                         >

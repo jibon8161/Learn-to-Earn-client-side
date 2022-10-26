@@ -11,16 +11,16 @@ Learn-to-Earn is mobile-ready,user Friendly and also very secure.
 - Set your Web App to Dark/Light Mode based on User preference.
 
 ## This wonderful project made with 
- 1.React. <br />
-2.React-router-dom.<br />
-3.Firebase.<br />
-4.Tailwind .<br />
-5.DaisyUi.<br />
-6.React-Hot-Toast.<br />
-7.Lottieflies .<br />
-8.React-To-Pdf.<br />
-9.varcel.<br />
-10.React-icons
+ - 1.React. <br />
+- 2.React-router-dom.<br />
+- 3.Firebase.<br />
+- 4.Tailwind .<br />
+- 5.DaisyUi.<br />
+- 6.React-Hot-Toast.<br />
+- 7.Lottieflies .<br />
+- 8.React-To-Pdf.<br />
+- 9.varcel.<br />
+- 10.React-icons
 
 
 ## Features

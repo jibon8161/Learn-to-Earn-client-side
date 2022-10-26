@@ -143,7 +143,7 @@ const Login = () => {
                 <div className="hero min-h-screen bg-base-200 shadow-2xl  shadow-zinc-600">
                     <div className="hero-content flex-col lg:flex-row-reverse">
                         <div className="text-center lg:text-left">
-                            <Lottie className='w-[70%] lg:ml-52' animationData={anim}></Lottie>
+                            <Lottie className='w-[70%] lg:ml-52 mt-12 lg:mt-0 ml-8' animationData={anim}></Lottie>
 
                         </div>
                         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">

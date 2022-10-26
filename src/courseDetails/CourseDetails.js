@@ -27,7 +27,7 @@ const CourseDetails = () => {
     return (
         <div>
 
-            <div className="navbar bg-gray-100  mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:mb-12 shadow-2xl lg:mt-0 mt-12 shadow-zinc-600">
+            <div className="navbar bg-gray-100  mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:mb-12 shadow-2xl lg:mt-0 mt-16 shadow-zinc-600">
                 <div className="lg:flex-1 text-2xl font-bold ">
                     <p className='hidden lg:block'>You have Selected </p><span className='text-purple-700 font-bold mr-3 ml-3'>{data?.name}</span><img className='w-10 ' src={data?.urlimg} alt="" />
                 </div>
