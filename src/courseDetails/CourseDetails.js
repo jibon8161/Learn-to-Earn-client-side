@@ -27,7 +27,7 @@ const CourseDetails = () => {
     return (
         <div>
 
-            <div className="navbar bg-gray-100  mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:mb-12 shadow-2xl  shadow-zinc-600">
+            <div className="navbar bg-gray-100  mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:mb-12 shadow-2xl lg:mt-0 mt-12 shadow-zinc-600">
                 <div className="lg:flex-1 text-2xl font-bold ">
                     <p className='hidden lg:block'>You have Selected </p><span className='text-purple-700 font-bold mr-3 ml-3'>{data?.name}</span><img className='w-10 ' src={data?.urlimg} alt="" />
                 </div>
@@ -55,7 +55,7 @@ const CourseDetails = () => {
                         <h3 className="py-2 font-bold tracking-wide text-center text-gray-800 uppercase dark:text-white">{data?.name}</h3>
 
                         <div class="flex items-center justify-between px-3 py-2 bg-gray-200 dark:bg-gray-700">
-                            <span class="font-bold text-gray-800 dark:text-gray-200">{data?.price}$</span>
+                            <span className="font-bold text-gray-800 dark:text-gray-200">{data?.price}$</span>
                             <button onClick={premiumAccessBtn} class="px-2 py-1 text-xs font-semibold text-white uppercase transition-colors duration-300 transform bg-gray-800 rounded hover:bg-gray-700 dark:hover:bg-gray-600 focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none">Get premium access</button>
                         </div>
 

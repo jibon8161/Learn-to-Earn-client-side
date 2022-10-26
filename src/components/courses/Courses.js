@@ -11,9 +11,9 @@ const Courses = () => {
     const { user } = useContext(InfoContext)
 
     return (
-        <div>
+        <div className=''>
             <div>
-                <h1 className='lg:text-4xl text-2xl font-extrabold text-purple-700 mt-5 mb-5'>{user?.displayName} <br /> <span className='text-black'>We are offering you....</span></h1>
+                <h1 className='lg:text-4xl text-2xl font-extrabold text-purple-700 lg:mt-5 mt-12 mb-5'>{user?.displayName} <br /> <span className='text-black'>We are offering you....</span></h1>
             </div>
 
 
